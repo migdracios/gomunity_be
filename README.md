@@ -1,33 +1,29 @@
-# 📌초보 개발자들의 커뮤니티, 거뮤니티
+# 🐢 거뮤니티
+![gomunity_og](https://user-images.githubusercontent.com/97969957/185279549-76daa3f9-50dc-4eb7-b412-2f9faec1c2b3.png)  
+- 초보 개발자들의 질의응답 커뮤니티 웹  
+- 질의응답 및 자료 공유 게시판 사용을 주 목적으로 함  
+  
+[☝거뮤니티 링크](https://gomunity.shop)
 
----
+## 1. 제작 기간 & 참여 인원
 
-## 프로젝트 소개
+제작기간 : 2022년 0708 ~ 0812
+참여인원 : 4
 
-![gomunity_og](https://user-images.githubusercontent.com/97969957/185279549-76daa3f9-50dc-4eb7-b412-2f9faec1c2b3.png)
+## 2. 사용 기술
 
-- 거뮤니티는 초보 개발자들이 모여 거리낌없이 질문하고 답변하면서 어려운 점을 해소하기 위한 웹 프로젝트입니다.
-- 개발자는 구글링을 통해 자신이 가지고 있는 이슈와 비슷한 케이스를 찾고 트러블 슈팅하게 되지만 초보 개발자는 익숙하지 않아 쉽지 않습니다. 스택오버플로우 또한 마찬가지입니다.
-- 따라서 더 나은 개발자가 되기 위한 초석과 같은 커뮤니티가 있어서 성장을 할 수 있는 사이트가 필요할 것 같다는 저희 팀의 경험으로 구상하게 되었습니다.
-- 사용자가 될 초보 개발자가 거뮤니티를 통해서 어떤 질문이라도 편하게 질문하고, 답변을 받아 해결하면서 그것을 스스로가 정리해 다음 스텝으로 나아갈 수 있도록 희망합니다.
-- 개발 공부를 하면서 알게된 꼭 나와 같은 초보들에게 공유하고 싶은 팁을 게시하는 자료게시판또한 있어 누구나 초보였던 시절에 불편했던 일들을 해결했던 자료를 공유하여 쉽게 찾을 수 있는 레퍼런스가 되기를 희망합니다.
-
-# 📌기술 스택
-
----
-
-## 서버
+### Backend
 
 <div style="display:flex">
     <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=Python&logoColor=white">
     <img src="https://img.shields.io/badge/Django-092E20?style=for-the-badge&logo=Django&logoColor=white">
 <div>
 
-## 데이터베이스
+### Database
 
 <img src="https://img.shields.io/badge/PostgreSQL-4169E1?style=for-the-badge&logo=PostgreSQL&logoColor=white">
 
-## 프론트엔드
+### Frontend
 
 <div style="display:flex">
     <img src="https://img.shields.io/badge/HTML5-e34f26?style=for-the-badge&logo=HTML5&logoColor=white">
@@ -35,7 +31,7 @@
     <img src="https://img.shields.io/badge/Javascript-F7DF1E?style=for-the-badge&logo=JavaScript&logoColor=white">    
 <div>
 
-## 프로젝트관리, 배포
+### Deploy
 
 <div style="display:flex">
     <img src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=Git&logoColor=white">
@@ -51,76 +47,15 @@
     <img src="https://img.shields.io/badge/NGINX-009639?style=for-the-badge&logo=NGINX&logoColor=white">
 <div>
 
-# 📌프로젝트 구조
-
----
-
-## 프로젝트 아키텍쳐
-
-![image](https://user-images.githubusercontent.com/97969957/185283041-45f4504d-e797-4714-9d7e-058568c20f8d.png)
-
-### 서버
-
-- 서버는 EC2 안에서 nginx,gunicorn/django,postgreSQL이 도커를 통해 이미지로 빌드되어 구축되어 있습니다.
-- Lets Encrypt를 사용하여 443포트로 열린 HTTPS 도메인으로 배포되어 있습니다.
-- 도메인은 Route 53을 사용하였습니다.
-
-### 프론트엔드
-
-- 프론트엔드는 S3를 통해 정적배포 되었습니다.
-- AWS CloudFront으로 AWS SSL 인증서가 적용된 HTTPS 도메인으로 배포되어 있습니다.
-- 도메인은 Gabia를 사용하였습니다.
-
-# 버전 별 SA
-
----
-
-## [ver.1.0]()
-
-## [ver.1.1]()
-
-## [ver.1.2]()
-
-## [ver.1.2.1]()
-
-## [ver.1.3]()
-
-## [ver.1.4]()
-
-# 이슈리포트
-
-# 🐢 거뮤니티
-
-초보 개발자들의 질의응답 커뮤니티 웹
-
-[거뮤니티 링크](https://gomunity.shop)
-
-## 1. 제작 기간 & 참여 인원
-
-제작기간 : 2022년 0708 ~ 0812
-
-참여인원
-
-1. 황영상 : [✍블로그링크](https://velog.io/@migdracios)
-2. 김태인 : [✍블로그링크](https://velog.io/@migdracios)
-3. 김희정 : [✍블로그링크](https://velog.io/@migdracios)
-4. 한건희 : [✍블로그링크](https://velog.io/@migdracios)
-
-## 2. 사용 기술
-
-### Backend
-
-아이콘
-
-### Frontend
-
-아이콘
-
 ## 3. ERD
 
 ![Gomunity](https://user-images.githubusercontent.com/97969957/185282933-80713a8e-cdf6-47c4-ba20-ef985fddf0d0.png)
+    
+## 4. AWS 아키텍쳐
 
-## 4. 핵심 기능
+![image](https://user-images.githubusercontent.com/97969957/185283041-45f4504d-e797-4714-9d7e-058568c20f8d.png)
+
+## 5. 핵심 기능
 
 - 거뮤니티는 DRF의 CBV를 활용한 게시판 CRUD 구현이 핵심인 프로젝트입니다.
 - 거뮤니티는 마크다운 에디터를 적용하여 질의응답하고, 자료를 공유하며 조회하는 것을 핵심으로 동작하고 있는 웹 서비스입니다. 또한 해시태그를 사용한 유사도 시스템이 적용되어 있어 유사한 질문글을 사용자에게 추천합니다.
@@ -192,7 +127,7 @@
     
     
 
-## 5. 핵심 트러블 슈팅
+## 6. 핵심 트러블 슈팅
 
 1. 핵심 트러블 슈팅 제목 [이슈 링크]()
     - 내용
