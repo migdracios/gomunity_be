@@ -112,7 +112,8 @@
 
 **질문글 검색** [🔥code](https://github.com/migdracios/gomunity_be/blob/cdd28297e5ca5c2b9d1293067ae67069c192678c/qna/views.py#L141-L145)
 
-    - 사용자는 내용을 검색하여 일치하는 데이터 만을 조회할 수 있습니다.
+    - 검색 키워드 Request
+    - 
     - DRF 제네릭뷰 서치필터를 사용하여 제목, 작성자, 내용 데이터와 일치하는 레코드를 클라이언트에 전달합니다.
 
 </div>
@@ -160,3 +161,65 @@
     - 내용
     - 접근법
     - 해결
+  
+  
+<details>
+<summary>ManyToManyField와 related_name</summary>
+<div markdown="1">
+
+---
+
+### ✍상황
+
+- 사용자가 질문글과 답글을 작성하면, 다른 사용자는 좋아요를 각각 질문글과 답글에 상호작용할 수 있음
+- 그렇기 때문에 질문글과 답글에 각각 좋아요 필드가 필요함
+- 사용자-질문글 테이블에 M:M으로 연결되는 `질문글 좋아요 테이블`과 사용자-답글 테이블에 M:M으로 연결되는 `답글 좋아요 테이블`을 각각 생성하고 싶음
+- ERD 대로 코드를 작성하고, migrations을 하는 중 하기와 같은 오류코드를 뱉어냈다.
+
+![Untitled](https://user-images.githubusercontent.com/97969957/186821329-a9a492ae-bac0-427b-b33c-39d6e0d5c066.png)
+
+```python
+class QnAQuestion(models.Model):
+    user = models.ForeignKey(UserModel, verbose_name="질문작성자", on_delete=models.CASCADE)
+    title = models.CharField("제목", max_length=100)
+    content = models.TextField("질문글")
+    like = models.ManyToManyField(UserModel, through="QuestionLike")
+    created_at = models.DateTimeField("생성시간", auto_now_add=True)
+    updated_at = models.DateTimeField("수정시간", auto_now=True)
+
+    def __str__(self):
+        return f"작성된 질문은 {self.title} 입니다"
+```
+
+- 작성된 ERD대로 ManyToMany 필드를 작성하려고 하자 오류가 발생하면서 마이그레이션이 실행되지 않았음
+
+### ✍오류코드
+
+![Untitle1d](https://user-images.githubusercontent.com/97969957/186821341-753f6c3c-f7f1-4c8a-aca2-2c48f802b402.png)
+
+### ✍트러블슈팅
+
+[점프 투 파이썬](https://wikidocs.net/71791)
+
+- 구글링을 통해 문제의 내용을 찾아보니 QnAQuestion 모델에서 사용한 user와 like 필드가 모두 UserModel과 연결이 되어있어서 생긴 문제
+- `UserModel.qnaquestions_set`처럼 User모델을 통해서 데이터에 접근하려 할때 user를 기준으로 할지, like를 기준으로 해야할지 명확하지 않다는 것이 이유였다
+
+### ✍해결
+
+하나의 모델에서 참조하고 있는 유저모델이 두 개나 있다!
+
+- ERD의 설계 상으로는 문제가 없었으나 물리적으로 모델을 생성할 때 각 필드가 참조하고 있는 모델이 동일하기 때문에 발생한 문제
+- 그러나 모델을 생성하는 과정에서 발생한 문제로, 이는 하나의 모델이 **`역참조할 때`** 바라봐야 할 필드가 무엇인지 확실하게 정의해줘야 한다
+
+related_name 메서드로 충돌 피하기
+
+- ManyToMany 필드에 **`related_name을 지정해주는 것`**으로 충돌을 피할 수 있다.(다른 필드에서도 가능하지만, 이름을 굳이 추가적으로 바꿔주지는 않았다)
+
+```jsx
+like = models.ManyToManyField(UserModel, related_name='question_like', through="QuestionLike")
+```
+
+</div>
+</details>
+  
+  
