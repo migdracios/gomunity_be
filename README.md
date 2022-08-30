@@ -3,12 +3,15 @@
 - 초보 개발자들의 질의응답 커뮤니티 웹  
 - 질의응답 및 자료 공유 게시판 사용을 주 목적으로 함  
   
-### [☝거뮤니티 배포 링크](https://gomunity.shop)
+### [☝거뮤니티 배포 링크☝](https://gomunity.shop)
+
+<br>
 
 ## 1. 제작 기간 & 참여 인원
 
 제작기간 : 2022년 0708 ~ 0818, 5주
 참여인원 : 4명
+
 
 ## 2. 사용 기술
 
@@ -19,9 +22,16 @@
     <img src="https://img.shields.io/badge/Django-092E20?style=for-the-badge&logo=Django&logoColor=white">
 <div>
 
+> Django는 팀원 전원의 주요 기술 스택입니다.  
+> Django Rest Framework를 활용한 RESTful API 구현, Serializer, 커스텀 Validation 구현으로 활용되었습니다.
+
 ### Database
 
 <img src="https://img.shields.io/badge/PostgreSQL-4169E1?style=for-the-badge&logo=PostgreSQL&logoColor=white">
+
+> PostgreSQL은 Django 및 DRF 공식문서에서 사용을 권장하는 데이터베이스 종류입니다.  
+> 학습지향인 프로젝트 거뮤니티 특성 및 방향성을 고려하여 공식문서를 참조하여 개발이 가능할 스택으로 선택하였습니다.  
+> 또한 차후 거뮤니티에 추가될 기능을 공식문서를 통해 계획하기에 좋다고 판단하여 우선으로 고려되어 사용했습니다.
 
 ### Frontend
 
@@ -31,7 +41,7 @@
     <img src="https://img.shields.io/badge/Javascript-F7DF1E?style=for-the-badge&logo=JavaScript&logoColor=white">    
 <div>
 
-### Deploy
+### Deploy & Tools
 
 <div style="display:flex">
     <img src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=Git&logoColor=white">
@@ -54,6 +64,8 @@
 ## 4. AWS 아키텍쳐
 
 ![image](https://user-images.githubusercontent.com/97969957/185283041-45f4504d-e797-4714-9d7e-058568c20f8d.png)
+![gomunity (1)](https://user-images.githubusercontent.com/97969957/187371617-783405eb-9ae5-4375-b042-f5de8c9c145c.png)
+
 
 ## 5. API 개발 명세
 ### [🚩 POSTMAN API 명세 Documnetation](https://documenter.getpostman.com/view/19965228/UzQpwndu)
