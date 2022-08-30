@@ -17,6 +17,7 @@
 - [☺김희정](https://github.com/kimheejeong3808)
 - [☺한건희](https://github.com/hangunhee94)
 
+<br>
 
 ## 2. 사용 기술
 
@@ -72,19 +73,26 @@
 > 비교적 무겁지 않은 프로젝트 특성 상 프리티어의 서버를 사용하여 구현하였습니다.  
 > AWS S3는 스토리지 시스템 및 프론트엔드 정적 배포를 위해 사용되었습니다.  
 > 업로드 이미지 및 프론트엔드 환경의 정적파일이 보관되어 있으며, CloudFront를 통해 무효화를 통해 업데이트를 구현하고 있습니다.
+  
+<br>
 
 ## 3. ERD
 
 ![Gomunity](https://user-images.githubusercontent.com/97969957/185282933-80713a8e-cdf6-47c4-ba20-ef985fddf0d0.png)
+  
+<br>
     
 ## 4. AWS 아키텍쳐
 
 ![image](https://user-images.githubusercontent.com/97969957/185283041-45f4504d-e797-4714-9d7e-058568c20f8d.png)
 ![gomunity (1)](https://user-images.githubusercontent.com/97969957/187371617-783405eb-9ae5-4375-b042-f5de8c9c145c.png)
-
+  
+<br>
 
 ## 5. API 개발 명세
 ### [🚩 POSTMAN API 명세 Documnetation](https://documenter.getpostman.com/view/19965228/UzQpwndu)
+  
+<br>
 
 ## 6. 핵심 기능
 
