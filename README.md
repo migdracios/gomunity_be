@@ -30,8 +30,8 @@
 <img src="https://img.shields.io/badge/PostgreSQL-4169E1?style=for-the-badge&logo=PostgreSQL&logoColor=white">
 
 > PostgreSQL은 Django 및 DRF 공식문서에서 사용을 권장하는 데이터베이스 종류입니다.  
-> 학습지향인 프로젝트 거뮤니티 특성 및 방향성을 고려하여 공식문서를 참조하여 개발이 가능할 스택으로 선택하였습니다.  
-> 또한 차후 거뮤니티에 추가될 기능을 공식문서를 통해 계획하기에 좋다고 판단하여 우선으로 고려되어 사용했습니다.
+> 학습지향인 프로젝트 방향성을 고려하여 공식문서를 참조하여 개발이 가능할 스택으로 선택하였습니다.  
+> 차후 거뮤니티에 추가할 기능을 공식문서를 참조하면서 기획하기 좋다고 판단하여 우선으로 고려했습니다.
 
 ### Frontend
 
@@ -56,6 +56,17 @@
     <img src="https://img.shields.io/badge/Gunicorn-499848?style=for-the-badge&logo=Gunicorn&logoColor=white">
     <img src="https://img.shields.io/badge/NGINX-009639?style=for-the-badge&logo=NGINX&logoColor=white">
 <div>
+  
+> Docker는 배포에 필요한 환경을 쉽고 빠르게 구축하고 업데이트할 수 있는 도구입니다.  
+> Dockerfile과 Docker-compose를 통해 기술 스택의 버전 및 내용, 변경사항을 이미지로 빌드하여 개발을 통해 달라진 내용을 배포환경에서 빠르게 적용할 수 있습니다.  
+> 개발환경과는 다른 웹서버,WSGI, 데이터베이스를 별개로 필요로 하는 배포환경을 쉽게 구축하기 위해 사용하였습니다.
+  
+<br>
+  
+> AWS EC2는 백엔드 배포를 위해 사용된 서버 클라우드 서비스입니다.  
+> 비교적 무겁지 않은 프로젝트 특성 상 프리티어의 서버를 사용하여 구현하였습니다.  
+> AWS S3는 스토리지 시스템 및 프론트엔드 정적 배포를 위해 사용되었습니다.  
+> 업로드 이미지 및 프론트엔드 환경의 정적파일이 보관되어 있으며, CloudFront를 통해 무효화를 통해 업데이트를 구현하고 있습니다.
 
 ## 3. ERD
 
